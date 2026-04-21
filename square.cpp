@@ -2130,4 +2130,185 @@ node* reverse_linked_list(node *head)
         
     node *temp=nullptr;
     return helper(temp,head,head);
-}*/
+}
+ListNode* reverse_Sll(ListNode *ptr)
+{
+    if(ptr->next!=nullptr)
+    {
+        ListNode *x;
+        x=ptr;
+        ptr=ptr->next;
+        reverse_Sll(ptr);
+    }
+    ptr->next=x;
+}
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+class MemoryHeatmap {
+private:
+    vector<int> blocks;   // each block stores used bytes
+    int blockSize;        // size of each block
+
+public:
+    MemoryHeatmap(int numBlocks, int blockSize)
+        : blocks(numBlocks, 0), blockSize(blockSize) {}
+
+    void allocate(int blockIndex, int size) {
+        if (blockIndex < 0 || blockIndex >= blocks.size()) {
+            cout << "Invalid block!\n";
+            return;
+        }
+
+        blocks[blockIndex] += size;
+
+        if (blocks[blockIndex] > blockSize)
+            blocks[blockIndex] = blockSize; // cap at max block size
+    }
+
+    void deallocate(int blockIndex, int size) {
+        if (blockIndex < 0 || blockIndex >= blocks.size()) {
+            cout << "Invalid block!\n";
+            return;
+        }
+
+        blocks[blockIndex] -= size;
+
+        if (blocks[blockIndex] < 0)
+            blocks[blockIndex] = 0;
+    }
+
+    void display() {
+        cout << "\n===== MEMORY HEATMAP =====\n";
+
+        for (int i = 0; i < blocks.size(); i++) {
+            int used = blocks[i];
+            int barLength = (used * 20) / blockSize; // scale to 20 chars
+
+            cout << "Block " << setw(2) << i << " [";
+
+            for (int j = 0; j < 20; j++) {
+                if (j < barLength) cout << "█";
+                else cout << "░";
+            }
+
+            cout << "] " << used << "/" << blockSize << " bytes\n";
+        }
+    }
+};
+
+int main() {
+    MemoryHeatmap heatmap(5, 100); // 5 blocks, each max 100 bytes
+
+    heatmap.allocate(0, 30);
+    heatmap.allocate(1, 70);
+    heatmap.allocate(2, 100);
+    heatmap.allocate(3, 45);
+    heatmap.allocate(4, 10);
+
+    heatmap.display();
+
+    cout << "\nAfter more allocations...\n";
+    heatmap.allocate(1, 20);
+    heatmap.allocate(4, 60);
+    heatmap.deallocate(3, 15);
+
+    heatmap.display();
+
+    return 0;
+}
+int main()
+{
+    vector <int>v;
+    cout<<v.size();
+}
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        unordered_set<ListNode*> s;
+        ListNode* ptr = head;
+        while (ptr != nullptr) {
+            if (s.find(ptr) != s.end())
+                return true;
+
+            s.insert(ptr);
+            ptr = ptr->next;
+        }
+        return false;
+    }
+};
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        unordered_set<ListNode*> s;
+        ListNode* ptr = head;
+        while (ptr != nullptr) {
+            if (s.find(ptr) != s.end())
+                return true;
+
+            s.insert(ptr);
+            ptr = ptr->next;
+        }
+        return false;
+    }
+};*/
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+class MemoryHeatmap {
+private:
+    vector<int> blocks;   // each block stores used bytes
+    int blockSize;        // size of each block
+public:
+    MemoryHeatmap(int numBlocks, int blockSize)
+        : blocks(numBlocks, 0), blockSize(blockSize) {}
+    void allocate(int blockIndex, int size) {
+        if (blockIndex < 0 || blockIndex >= blocks.size()) {
+            cout << "Invalid block!\n";
+            return;
+        }
+        blocks[blockIndex] += size;
+        if (blocks[blockIndex] > blockSize)
+            blocks[blockIndex] = blockSize; // cap at max block size
+    }
+    void deallocate(int blockIndex, int size) {
+        if (blockIndex < 0 || blockIndex >= blocks.size()) {
+            cout << "Invalid block!\n";
+            return;
+        }
+        blocks[blockIndex] -= size;
+        if (blocks[blockIndex] < 0)
+            blocks[blockIndex] = 0;
+    }
+    void display() {
+        cout << "\n===== MEMORY HEATMAP =====\n";
+        for (int i = 0; i < blocks.size(); i++) {
+            int used = blocks[i];
+            int barLength = (used * 20) / blockSize; // scale to 20 chars
+            cout << "Block " << setw(2) << i << " [";
+            for (int j = 0; j < 20; j++) {
+                if (j < barLength) cout << "█";
+                else cout << "░";
+            }
+            cout << "] " << used << "/" << blockSize << " bytes\n";
+        }
+    }
+};
+int main() {
+    MemoryHeatmap heatmap(5, 100); // 5 blocks, each max 100 bytes
+    heatmap.allocate(0, 30);
+    heatmap.allocate(1, 70);
+    heatmap.allocate(2, 100);
+    heatmap.allocate(3, 45);
+    heatmap.allocate(4, 10);
+    heatmap.display();
+    cout << "\nAfter more allocations...\n";
+    heatmap.allocate(1, 20);
+    heatmap.allocate(4, 60);
+    heatmap.deallocate(3, 15);
+    heatmap.display();
+    return 0;
+}
