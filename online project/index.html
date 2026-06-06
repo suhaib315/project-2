@@ -3,14 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <meta name="description" content="Welcome to My Website - Your trusted partner for quality services and solutions.">
+    <meta name="keywords" content="my website, services, solutions">
+    <meta name="author" content="My Website">
+    <meta property="og:title" content="My Website">
+    <meta property="og:description" content="Your trusted partner for quality services and solutions.">
+    <meta property="og:type" content="website">
+    <title>My Website - Home</title>
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>Favicons have been created and configured.</p>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">MyWebsite</a>
+            <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to My Website</h1>
+        <p>We provide quality services and innovative solutions to help your business grow and succeed in the digital world.</p>
+    </section>
+
+    <section>
+        <h2>Our Services</h2>
+        <div class="cards">
+            <article class="card">
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites built with the latest technologies to give your business a powerful online presence.</p>
+            </article>
+            <article class="card">
+                <h3>Mobile Apps</h3>
+                <p>Cross-platform mobile applications that deliver seamless experiences to your users on any device.</p>
+            </article>
+            <article class="card">
+                <h3>Digital Marketing</h3>
+                <p>Data-driven marketing strategies to increase your brand visibility and reach your target audience effectively.</p>
+            </article>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why Choose Us</h2>
+        <div class="cards">
+            <article class="card">
+                <h3>Quality First</h3>
+                <p>We never compromise on quality. Every project we deliver meets the highest standards of excellence.</p>
+            </article>
+            <article class="card">
+                <h3>24/7 Support</h3>
+                <p>Our dedicated support team is always available to help you with any questions or issues.</p>
+            </article>
+            <article class="card">
+                <h3>Affordable Pricing</h3>
+                <p>Competitive pricing without hidden fees. Get the best value for your investment.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>MyWebsite</h4>
+                <p>Delivering quality digital solutions since 2020. Your success is our mission.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

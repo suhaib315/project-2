@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact My Website - Get in touch with us for inquiries, support, or to request a quote.">
+    <meta name="keywords" content="contact us, get in touch, support, inquiry, quote">
+    <meta name="author" content="My Website">
+    <meta property="og:title" content="Contact Us - My Website">
+    <meta property="og:description" content="Get in touch with us for inquiries, support, or to request a quote.">
+    <meta property="og:type" content="website">
+    <title>Contact Us - My Website</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo">MyWebsite</a>
+            <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>Have a question or want to work together? We would love to hear from you.</p>
+    </section>
+
+    <section>
+        <h2>Get In Touch</h2>
+        <div class="cards">
+            <article class="card">
+                <h3>Email</h3>
+                <p><strong>General:</strong> hello@mywebsite.com</p>
+                <p><strong>Support:</strong> support@mywebsite.com</p>
+                <p><strong>Sales:</strong> sales@mywebsite.com</p>
+            </article>
+            <article class="card">
+                <h3>Phone</h3>
+                <p><strong>Main:</strong> +1 (555) 123-4567</p>
+                <p><strong>Hours:</strong> Mon - Fri, 9am - 6pm EST</p>
+            </article>
+            <article class="card">
+                <h3>Office</h3>
+                <p>123 Main Street, Suite 100</p>
+                <p>New York, NY 10001</p>
+                <p>United States</p>
+            </article>
+        </div>
+    </section>
+
+    <section>
+        <h2>Send Us a Message</h2>
+        <form action="#" method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="sales">Sales / Quote Request</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project or question..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="cards">
+            <article class="card">
+                <h3>What is your response time?</h3>
+                <p>We typically respond to all inquiries within 24 business hours. For urgent matters, please call us directly.</p>
+            </article>
+            <article class="card">
+                <h3>Do you offer free consultations?</h3>
+                <p>Yes! We offer a free 30-minute consultation to discuss your project needs and how we can help.</p>
+            </article>
+            <article class="card">
+                <h3>Can I visit your office?</h3>
+                <p>Absolutely! We welcome in-person meetings. Please schedule an appointment in advance so we can prepare for your visit.</p>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            e.target.reset();
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>MyWebsite</h4>
+                <p>Delivering quality digital solutions since 2020. Your success is our mission.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
