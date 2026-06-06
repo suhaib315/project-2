@@ -109,8 +109,28 @@ header {
 .hero p {
     font-size: 1.15rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
     opacity: 0.9;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.hero-links .btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.hero-links .btn-outline:hover {
+    background: #fff;
+    color: var(--primary);
+    text-decoration: none;
 }
 
 /* Sections */
